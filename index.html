@@ -157,6 +157,7 @@ function openModal(type,preselect){selectedPhotos=[];const root=document.getElem
  if(type==='review'){
  root.querySelector('#newtarget').onclick=()=>{saveDraft();openModal('target');};
   restoreDraft();
+  if(preselect){const el=root.querySelector('#target');if(el&&[...el.options].some(o=>o.value===preselect))el.value=preselect;}
   root.querySelector('#entry').addEventListener('input',scheduleDraft);
   root.querySelector('#entry').addEventListener('change',scheduleDraft);
  root.querySelector('#photos').addEventListener('change',async e=>{const input=e.target;const newFiles=[...input.files];input.value='';for(const file of newFiles){if(selectedPhotos.length>=3){alert('写真は最大3枚です。');break;}if(!file.type.startsWith('image/')){alert('画像ファイルを選んでください。');continue;}if(file.size>12*1024*1024){alert('12MB以下の写真を選んでください。');continue;}try{const uri=await compressPhoto(file);if(!root.querySelector('#photo-previews'))return;selectedPhotos.push(uri);drawPhotos();scheduleDraft();}catch(error){alert('写真を読み込めませんでした。別の画像で試してください。');}}});
@@ -171,6 +172,7 @@ function drawPhotos(){const e=document.getElementById('photo-previews');if(!e)re
 function closeModal(skipDraft=false){if(!skipDraft)saveDraft();document.getElementById('modals').classList.add('hidden');document.getElementById('modals').innerHTML='';selectedPhotos=[];}
 let toastTimer;
 function toast(t){const n=document.getElementById('toast');n.textContent=t;n.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.classList.add('hidden'),3000);}
+window.addEventListener('pagehide',()=>{if(!document.getElementById('modals').classList.contains('hidden'))saveDraft();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('modals').classList.contains('hidden')){e.preventDefault();/* 誤操作で閉じない */}});
 render();
 
