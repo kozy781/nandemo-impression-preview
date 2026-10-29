@@ -94,7 +94,33 @@ const DRAFT_STORE='nandemo-impression-review-draft-v1';
 let autosaveTimer=null;
 function readDraft(){try{return JSON.parse(localStorage.getItem(DRAFT_STORE)||'null');}catch{return null;}}
 function clearDraft(){clearTimeout(autosaveTimer);try{localStorage.removeItem(DRAFT_STORE);}catch{}}
-function saveDraft(){const form=document.querySelector('#modals #entry');if(!form||!form.elements.target)return;const values={};for(const el of form.querySelectorAll('input:not([type=file]),select,textarea')){if(!el.name||el.type==='checkbox')continue;values[el.name]=el.value;}values.tags=[...form.querySelectorAll('input[name=tag]:checked')].map(el=>el.value);let data={values,photos:selectedPhotos.slice(0,3)};try{localStorage.setItem(DRAFT_STORE,JSON.stringify(data));}catch(e){try{data.photos=[];localStorage.setItem(DRAFT_STORE,JSON.stringify(data));}catch{const n=document.getElementById('draft-status');if(n)n.textContent='下書きの保存に失敗しました。文章を別途コピーしてください。';return;}const n=document.getElementById('draft-status');if(n)n.textContent=data.photos.length===selectedPhotos.length?'下書きを自動保存しています（このブラウザ内）':'文章を自動保存しました。写真は容量制限のため保存できませんでした。';}
+function saveDraft(){
+ const form=document.querySelector('#modals #entry');
+ if(!form||!form.elements.namedItem('target'))return;
+ const values={};
+ for(const el of form.querySelectorAll('input:not([type="file"]),select,textarea')){
+  if(!el.name||el.type==='checkbox')continue;
+  values[el.name]=el.value;
+ }
+ values.tags=[...form.querySelectorAll('input[name="tag"]:checked')].map(el=>el.value);
+ const data={values,photos:selectedPhotos.slice(0,3)};
+ let photosSaved=true;
+ try{
+  localStorage.setItem(DRAFT_STORE,JSON.stringify(data));
+ }catch(e){
+  try{
+   data.photos=[];
+   photosSaved=false;
+   localStorage.setItem(DRAFT_STORE,JSON.stringify(data));
+  }catch(e2){
+   const n=document.getElementById('draft-status');
+   if(n)n.textContent='下書きを保存できませんでした。文章をコピーして保管してください。';
+   return;
+  }
+ }
+ const n=document.getElementById('draft-status');
+ if(n)n.textContent=photosSaved?'下書きを自動保存しました（このブラウザ内）':'文章を保存しました。写真は容量制限のため保存できませんでした。';
+}
 function restoreDraft(){const form=document.querySelector('#modals #entry'),draft=readDraft();if(!form||!form.elements.target||!draft?.values)return;for(const [name,value] of Object.entries(draft.values)){if(name==='tags')continue;const el=form.elements.namedItem(name);if(el&&typeof value==='string'&&(name!=='target'||[...el.options].some(o=>o.value===value)))el.value=value;}form.querySelectorAll('input[name=tag]').forEach(el=>el.checked=Array.isArray(draft.values.tags)&&draft.values.tags.includes(el.value));selectedPhotos=Array.isArray(draft.photos)?draft.photos.filter(validPhoto).slice(0,3):[];drawPhotos();const n=document.getElementById('draft-status');if(n)n.textContent='前回の下書きを復元しました（このブラウザ内）';}
 function scheduleDraft(){clearTimeout(autosaveTimer);autosaveTimer=setTimeout(saveDraft,200);}
 
