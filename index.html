@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="description" content="なんでもインプレッションは、クルマ・バイク・PC・自転車・サービスなど、実際に使った人の口コミ・使用感・体験談を読んで投稿できるサイトです。"><title>なんでも☆インプレッション｜使用感・口コミ・レビューを探して投稿</title><style>
+:root{--ink:#222e40;--muted:#65748a;--blue:#185caa;--bg:#f7f9fc;--line:#dce4ec;--white:#fff;--gold:#bd7d14;--pale:#eaf3ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--blue)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #79aaf0;outline-offset:2px}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top-inner{max-width:1160px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-size:28px;font-weight:900;letter-spacing:-.05em;color:#263a54;white-space:nowrap}.logo .logo-first{color:#ffcc00}.logo .logo-star{color:#111111;display:inline-block;margin:0 .07em;letter-spacing:0}.logo b{color:var(--blue)}.tag{font-size:11px;color:#8392a5;font-weight:600;margin-left:10px;letter-spacing:0}
+.btn{border:0;background:var(--blue);color:#fff;border-radius:7px;padding:10px 16px;font-weight:750;white-space:nowrap}
+.btn:hover{background:#0e498f}.btn.alt{background:#eef5ff;color:#1555a0;border:1px solid #c4daf6}.btn.alt:hover{background:#dceafe}.btn.small{font-size:13px;padding:7px 11px}.btn.ghost{background:#fff;color:var(--blue);border:1px solid #afc5de}
+.hero{background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1160px;margin:auto;padding:30px 20px 29px}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.08em}
+.hero h1{font-size:clamp(24px,3.3vw,36px);margin:7px 0 7px;line-height:1.35;letter-spacing:-.035em}
+.hero p{margin:0 0 17px;color:#4c5c72;font-size:14px}
+.join-copy{margin:-5px 0 17px;padding-left:12px;border-left:3px solid #d5e5f7}
+.join-copy .join-head{margin:0 0 3px;color:#185caa;font-size:16px;font-weight:800;line-height:1.55}
+.join-copy .join-sub{margin:0;color:#50637a;font-size:13px;line-height:1.65}
+.searchbar{display:flex;gap:8px;max-width:780px}.searchbar input{min-width:0;flex:1;border:1px solid #b9cbdc;border-radius:7px;padding:12px 14px;background:#fff}
+.howline{margin-top:15px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;color:#5d6d80;font-size:12px}
+.howline b{color:#2a577f;font-weight:750}.howline span+span:before{content:'›';margin-right:14px;color:#8e9cac}
+.layout{max-width:1160px;margin:28px auto 40px;padding:0 20px;display:grid;grid-template-columns:minmax(0,1fr) 215px;gap:26px;align-items:start}.is-home .layout{display:block}.is-home .side{display:none}
+.content{min-width:0}.panel{background:white;border:1px solid var(--line);border-radius:8px}.side{padding:16px}.side h2{font-size:14px;margin:0 0 12px}.category{display:block;text-align:left;background:transparent;border:0;padding:9px;width:100%;border-radius:5px;color:var(--blue);font-size:13px}.category:hover,.category.active{background:var(--pale);color:#124879}.category .count{float:right;font-size:11px;color:#7589a4}
+.side-note{font-size:12px;color:#5f6d7c;background:#f5f7fa;padding:11px;border-radius:5px;margin-top:14px}
+.directory-intro{display:flex;justify-content:space-between;gap:10px;align-items:end;margin:0 0 14px}
+.directory-intro h2,.section-separator h2{font-size:20px;line-height:1.35;margin:0 0 4px}.directory-intro p,.section-separator p{margin:0;color:var(--muted);font-size:13px}.section-marker{font-weight:700;font-size:10px;letter-spacing:.08em;color:#9ba8b8}
+.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.directory-group{background:#fff;border:1px solid var(--line);border-radius:6px;min-height:165px;padding:0 15px 12px}
+.dir-title{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:2px solid #d6e5f6}
+.dir-heading{border:0;background:none;text-align:left;color:#174f93;font-size:16px;font-weight:800;padding:0;line-height:1.5}.dir-heading:hover,.dir-link:hover,.sub-link:hover,.breadcrumb button:hover{text-decoration:underline}
+.dir-count{font-size:11px;color:#8c98a7;white-space:nowrap}
+.dir-list{margin:10px 0 0;padding-left:15px;list-style:disc;color:#9cacc3}
+.dir-list li{margin:5px 0}.dir-link,.sub-link{border:0;background:none;text-align:left;padding:0;color:var(--blue);font-size:13px;line-height:1.6}.sublinks{display:flex;gap:7px 13px;flex-wrap:wrap;padding:2px 0 3px}.sub-link{font-size:12px;color:#607f9e}
+.section-separator{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:11px;margin:25px 0 12px}
+.item-list{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.item{border:0;border-bottom:1px solid #e7edf4;display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;text-align:left;background:#fff;padding:12px 16px;color:inherit}.item:last-child{border-bottom:0}.item:hover{background:#f5faff}.item-body{display:block;min-width:0}.item-name{display:block;color:var(--blue);font-size:15px;line-height:1.45}.item-sub{display:block;color:var(--muted);font-size:12px}.chip{display:inline-block;font-size:10px;color:#63768e;background:#f2f6fa;padding:1px 6px;border-radius:3px;margin-bottom:3px}
+.rating{font-size:14px;color:#b2760a;font-weight:800;white-space:nowrap}.rating small{display:block;color:#8693a5;font-size:11px;font-weight:400;text-align:right}
+.breadcrumb{color:#718297;font-size:12px;margin:0 0 16px}.breadcrumb button{border:0;background:none;padding:0;color:var(--blue);font-size:12px}.branch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.branch-link{padding:10px 12px;text-align:left;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--blue);display:flex;justify-content:space-between;gap:12px}.branch-link:hover{background:#f4f9ff}
+.empty{text-align:center;border:1px dashed #b9c9da;padding:30px 15px;background:#fff;border-radius:8px;color:var(--muted)}
+.detail{padding:22px}.detail h2{font-size:24px;margin:0 0 4px}.detail .sub{color:var(--muted);font-size:13px}.back{border:0;background:none;color:var(--blue);font-weight:750;margin:0 0 15px;padding:0}
+.section{margin-top:28px}.section-title{font-size:17px;margin:0 0 10px}.review{border-top:1px solid var(--line);padding:16px 0}.review h4{font-size:16px;margin:2px 0}.review .meta{color:var(--muted);font-size:12px}.review p{font-size:14px;white-space:pre-wrap;margin:9px 0}.review .foot{display:flex;justify-content:space-between;gap:10px}.stars{color:var(--gold)}.footnote{color:var(--muted);font-size:11px}.report{border:0;background:none;text-decoration:underline;font-size:12px;color:var(--muted)}
+footer{padding:22px;text-align:center;border-top:1px solid var(--line);color:#7c8998;font-size:12px}
+.modalwrap{position:fixed;inset:0;z-index:10;background:#162841a8;display:flex;align-items:center;justify-content:center;padding:15px}.modal{background:white;padding:24px;border-radius:9px;max-height:90vh;overflow:auto;width:min(100%,540px)}.modalheader{display:flex;align-items:center;justify-content:space-between}.modalheader h2{margin:0;font-size:20px}.x{font-size:25px;border:0;background:none;color:var(--muted)}.form-label{display:block;font-size:13px;font-weight:750;margin:13px 0 5px}.field{display:block;width:100%;background:#fff;border:1px solid #c1cfdd;border-radius:5px;padding:10px;color:var(--ink)}textarea.field{min-height:130px;resize:vertical}.notice{margin-top:12px;padding:10px 12px;background:#fff9e8;color:#72572b;border-radius:4px;font-size:12px}.form-actions{display:flex;justify-content:end;margin-top:17px}.path{font-size:13px;color:var(--muted)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#143553;color:white;padding:12px 15px;border-radius:7px;z-index:20;box-shadow:0 4px 20px #0003}.hidden{display:none!important}
+@media(max-width:900px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:minmax(0,1fr) 190px}}
+@media(max-width:650px){.top-inner{padding:12px 14px;flex-wrap:wrap}.logo{font-size:22px}.tag{display:none}.top .btn{font-size:12px;padding:8px 10px}.hero-inner{padding:22px 15px 24px}.hero h1{font-size:24px}.hero p{font-size:13px}.join-copy .join-head{font-size:15px}.join-copy .join-sub{font-size:12px}.howline{gap:7px;font-size:11px}.howline span+span:before{margin-right:7px}.layout{display:block;padding:0 12px;margin:22px auto}.side{margin-top:25px}.directory-grid{grid-template-columns:1fr;gap:10px}.directory-group{min-height:auto}.section-marker{display:none}.branch-grid{grid-template-columns:1fr}.item{padding:12px;align-items:start}.item-name{font-size:14px}.rating{font-size:13px}.section-separator h2,.directory-intro h2{font-size:19px}}
+@media(max-width:390px){.logo{font-size:20px}.hero h1{font-size:22px}.searchbar input{padding:10px;font-size:13px}.searchbar .btn{padding:9px 11px}.item{gap:6px}}
+
+/* Ver.0.3: unified writing experience */
+.header-actions{display:flex;gap:8px;align-items:center}
+.compose-hint{margin:18px 0 0;padding:15px 17px;background:#fff;border:1px solid #dae7f6;border-left:4px solid #185caa;border-radius:6px;display:flex;justify-content:space-between;gap:15px;align-items:center}
+.compose-hint strong{font-size:14px}.compose-hint p{margin:4px 0 0;color:#617186;font-size:12px}
+.pill-row{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 10px}
+.pill-check{display:inline-flex;align-items:center;gap:5px;font-size:12px;background:#f2f6fa;border:1px solid #d3dfed;border-radius:30px;padding:6px 10px;cursor:pointer;color:#365574}
+.pill-check:has(input:checked){background:#e7f2ff;border-color:#6b9dd7;color:#164c86}
+.pill-check input{accent-color:#185caa}
+.helper{font-size:12px;color:#65748a;margin:4px 0 10px}
+.form-inline{display:flex;align-items:end;gap:8px}.form-inline .field{flex:1;min-width:0}.form-inline .btn{flex-shrink:0}
+.form-card{margin-top:14px;padding:12px 15px;background:#f7faff;border:1px solid #e0eaf4;border-radius:6px}
+.form-section-label{font-size:12px;font-weight:750;color:#506d8d}
+.uploader{display:block;cursor:pointer;border:1px dashed #97b6d5;background:#f8fbff;padding:13px;text-align:center;color:#185caa;font-size:13px;font-weight:700;border-radius:7px;margin-top:8px}
+.uploader input{display:none}
+.photo-previews,.review-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0}
+.photo-thumb{position:relative;overflow:hidden;border:1px solid #dce4ec;border-radius:5px;background:#f6f7f9}
+.photo-thumb img{width:100%;height:90px;object-fit:cover;display:block}
+.photo-thumb button{position:absolute;top:3px;right:3px;background:#fff;color:#852323;border:1px solid #ddd;border-radius:4px;padding:1px 5px;font-size:12px}
+.review-photos img{width:100%;height:124px;object-fit:cover;border-radius:5px;border:1px solid #e1e6ed;cursor:zoom-in}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 4px}
+.filter-btn{border:1px solid #cbd9ea;background:white;color:#345c85;border-radius:20px;padding:5px 12px;font-size:12px;font-weight:650}
+.filter-btn.active{background:#185caa;border-color:#185caa;color:white}
+.review-tags{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}
+.review-tag{font-size:11px;color:#315c86;background:#eef5fc;padding:2px 7px;border-radius:3px}
+.score-optional{font-size:12px;color:#8a96a5}
+.empty-posts{padding:20px;color:#65748a;font-size:13px}
+.modal.large{width:min(100%,660px)}.modalwrap{overflow-y:auto}
+.modal{max-height:min(90vh,850px)}
+@media(max-width:650px){.top-inner{gap:7px}.top .btn{padding:7px 8px}.top .header-actions{width:100%;justify-content:flex-end}.compose-hint{display:block}.compose-hint .btn{margin-top:8px;width:100%}.modal{padding:17px;max-height:94vh}.form-inline{flex-wrap:wrap}.form-inline .btn{width:100%}.review-photos img{height:93px}}
+@media(max-width:390px){.logo{font-size:19px}}
+</style></head><body>
+<header class="top"><div class="top-inner"><div class="logo"><span class="logo-first">なんでも</span><span class="logo-star">☆</span><b>インプレッション</b><span class="tag">試作版 Ver.0.3</span></div><div class="header-actions"><button class="btn" type="button" onclick="openModal('review')">＋ 投稿する</button></div></div></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">みんなの使用感・体験談が集まるレビュー投稿サイト</div><h1>実際に使った人の感想を、探す・読む・書く。</h1><p>クルマ、バイク、パソコン、自転車、日用品やサービスまで。気になるものの「本当の使い心地」を共有する。</p><div class="join-copy"><p class="join-head">あなたの「使ってみた」が、誰かの「知りたかった」になる。</p><p class="join-sub">あなたの体験が、誰かの役に立つ。みんなの声で育つサイトです。</p></div><div class="searchbar"><input id="q" type="search" placeholder="例：ラパンSS、RTX 2080 Ti、エアコン" aria-label="インプレを検索"><button class="btn" type="button" onclick="searchNow()">インプレを探す</button></div><div class="howline"><span><b>1</b> カテゴリか名前で探す</span><span><b>2</b> 使った人の感想を読む</span><span><b>3</b> 自分の体験を投稿する</span></div></div></section>
+<main class="layout"><div class="content" id="app"></div><aside class="panel side"><h2>カテゴリ一覧</h2><nav id="sidecats"></nav><div class="side-note"><b>試作版について</b><div>これはデモサイトです。投稿や写真はこのブラウザ内にのみ保存され、ほかの人には共有されません。</div></div></aside></main>
+<footer>なんでも☆インプレッション（仮）｜Ver.0.3 ／ デモ投稿は架空の例です ／ サーバーには送信されません</footer>
+<div id="modals" class="hidden"></div><div id="toast" class="toast hidden" role="status"></div>
+<script>
+
+'use strict';
+const TREE=[{id:'car',name:'車',icon:'🚗',children:[{id:'car-suzuki',name:'スズキ',children:[{id:'lapin',name:'ラパン'},{id:'swift',name:'スイフト'}]},{id:'car-honda',name:'ホンダ',children:[{id:'s2000',name:'S2000'},{id:'civic',name:'シビック'}]},{id:'car-other',name:'その他'}]},{id:'bike',name:'バイク',icon:'🏍️',children:[{id:'bike-yamaha',name:'ヤマハ',children:[{id:'tzr',name:'TZR250'}]},{id:'bike-other',name:'その他'}]},{id:'pc',name:'PC・周辺機器',icon:'🖥️',children:[{id:'gpu',name:'グラフィックボード'},{id:'cpu',name:'CPU'},{id:'pcpart',name:'その他パーツ'}]},{id:'cycle',name:'自転車',icon:'🚲',children:[{id:'electriccycle',name:'電動アシスト'},{id:'cycleparts',name:'パーツ・用品'}]},{id:'diy',name:'DIY・住宅設備',icon:'🔧',children:[{id:'ac',name:'エアコン・取付'},{id:'tools',name:'工具'}]},{id:'service',name:'サービス・体験',icon:'📝',children:[{id:'shop',name:'お店・接客'},{id:'subscription',name:'通信・サブスク'},{id:'daily',name:'暮らしのサービス'}]}];
+const SEED=[{id:'demo-1',cat:'lapin',name:'アルトラパン SS（HE21S）',brand:'スズキ',desc:'軽スポーツ・ターボ / K6Aエンジン',reviews:[{id:'r1',nickname:'試作サンプル',score:4,title:'街乗りが楽しい軽ターボ',body:'車体がコンパクトで取り回しがよく、乗っていて楽しい。年式相応の整備状態には注意。\n※これは画面確認用の架空レビューです。',date:'2026-10-27',sample:true}]},{id:'demo-2',cat:'s2000',name:'S2000（AP1）',brand:'ホンダ',desc:'オープン2シーター・FR',reviews:[{id:'r2',nickname:'試作サンプル',score:5,title:'走りに集中できる一台',body:'エンジンとシャシーの一体感が魅力。\n※これは画面確認用の架空レビューです。',date:'2026-10-27',sample:true}]},{id:'demo-3',cat:'gpu',name:'GeForce RTX 2080 Ti',brand:'NVIDIA',desc:'グラフィックボード / VRAM 11GB',reviews:[{id:'r3',nickname:'試作サンプル',score:4,title:'古くても用途次第で現役',body:'VRAM 11GBのため、軽めのローカル画像生成にも使える。\n※これは画面確認用の架空レビューです。',date:'2026-10-27',sample:true}]},{id:'demo-4',cat:'tzr',name:'TZR250R（3XV）',brand:'ヤマハ',desc:'250cc 2ストローク スポーツ',reviews:[]},{id:'demo-5',cat:'cpu',name:'Ryzen 9 7900X',brand:'AMD',desc:'12コア / 24スレッド CPU',reviews:[]}];
+// Backwards-compatible storage: keep existing local demonstration posts.
+const STORE='nandemo-impression-prototype-v1';
+let db;
+try{db=JSON.parse(localStorage.getItem(STORE));if(!db||!Array.isArray(db.items))throw 0;}
+catch{db={items:JSON.parse(JSON.stringify(SEED)),reports:[]};}
+if(!Array.isArray(db.reports))db.reports=[];
+for(const item of db.items){if(!Array.isArray(item.reviews))item.reviews=[];}
+let view={cat:null,item:null,query:''};
+let filter='all';
+let selectedPhotos=[];
+const FILTERS=[['all','すべて'],['usage','使用感'],['work','作業・整備'],['compare','比較・検証'],['photo','写真あり']];
+const TAGS=[['usage','使用感'],['work','作業・整備'],['compare','比較・検証']];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db));return true;}catch(e){alert('保存できませんでした。写真の容量やブラウザの保存制限が原因かもしれません。写真を減らして再度お試しください。');return false;}}
+function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function findNode(id,nodes=TREE,anc=[]){for(const n of nodes){if(n.id===id)return{node:n,path:[...anc,n]};if(n.children){const res=findNode(id,n.children,[...anc,n]);if(res)return res;}}return null;}
+function descendants(id){const f=findNode(id);if(!f)return[];const ids=[id];const walk=n=>(n.children||[]).forEach(c=>{ids.push(c.id);walk(c);});walk(f.node);return ids;}
+function crumb(cat){const found=findNode(cat);return found?found.path.map(n=>safe(n.name)).join(' › '):'すべてのカテゴリ';}
+function rated(item){return item.reviews.filter(r=>Number(r.score)>=1 && Number(r.score)<=5);}
+function avg(item){const rows=rated(item);return rows.length?(rows.reduce((a,r)=>a+Number(r.score),0)/rows.length).toFixed(1):'—';}
+function counts(cat){const ids=cat?descendants(cat):null;return db.items.filter(x=>!ids||ids.includes(x.cat)).length;}
+function rating(item){const has=rated(item).length>0;return `<div class="rating">${has?'★ '+avg(item):item.reviews.length?'評価なし':'レビューなし'}<small>${item.reviews.length}件のインプレ</small></div>`;}
+function side(){const nav=document.getElementById('sidecats');nav.innerHTML='<button class="category '+(!view.cat?'active':'')+'" data-cat="">すべてのカテゴリ</button>'+TREE.map(n=>`<button class="category ${view.cat===n.id?'active':''}" data-cat="${n.id}">${safe(n.name)} <span class="count">${counts(n.id)}</span></button>`).join('');nav.querySelectorAll('[data-cat]').forEach(x=>x.addEventListener('click',()=>goCat(x.dataset.cat)));}
+function directoryGroup(n){const branch=(n.children||[]).map(c=>`<li><button type="button" class="dir-link" data-open-cat="${c.id}">${safe(c.name)}</button>${(c.children||[]).length?`<div class="sublinks">${c.children.map(g=>`<button type="button" class="sub-link" data-open-cat="${g.id}">${safe(g.name)}</button>`).join('')}</div>`:''}</li>`).join('');return `<section class="directory-group"><div class="dir-title"><button type="button" class="dir-heading" data-open-cat="${n.id}">${safe(n.name)}</button><span class="dir-count">${counts(n.id)}件</span></div><ul class="dir-list">${branch}</ul></section>`;}
+function render(){side();const e=document.getElementById('app');const home=!view.cat&&!view.item&&!view.query.trim();document.body.classList.toggle('is-home',home);if(view.item){renderDetail(e);return;}
+ const q=view.query.trim().toLocaleLowerCase('ja');const allowed=view.cat?descendants(view.cat):null;
+ const items=db.items.filter(x=>(!allowed||allowed.includes(x.cat))&&(!q||[x.name,x.brand,x.desc,crumb(x.cat),...x.reviews.flatMap(r=>[r.title,r.body])].join(' ').toLocaleLowerCase('ja').includes(q)));
+ let h='';
+ if(home){h+=`<section class="directory-intro"><div><h2>カテゴリから探す</h2><p>気になる対象をたどって、みんなの使用感・体験談を読もう。</p></div><span class="section-marker">CATEGORY DIRECTORY</span></section>`;
+ h+=`<div class="directory-grid">${TREE.map(directoryGroup).join('')}</div>`;
+ h+=`<section class="compose-hint"><div><strong>あなたの体験も、誰かの参考に。</strong><p>ブログ・整備手帳などで迷う必要はありません。投稿入口はひとつです。</p></div><button type="button" class="btn" onclick="openModal('review')">＋ インプレを投稿する</button></section>`;
+ h+=`<div class="section-separator"><div><h2>登録されている対象</h2><p>気になる名前を選ぶと、インプレを読んだり投稿したりできます。</p></div><button type="button" class="btn alt small" onclick="openModal('target')">＋ 対象を追加</button></div>`;
+ }else{const f=view.cat?findNode(view.cat):null;
+ h+=`<div class="breadcrumb"><button type="button" data-open-cat="">カテゴリトップ</button>${f?` › ${f.path.map(n=>safe(n.name)).join(' › ')}`:''}</div>`;
+ if(f){h+=`<div class="directory-intro"><div><h2>${safe(f.node.name)} のインプレ</h2><p>カテゴリを絞り込み、対象を探せます。</p></div></div>`;
+ if(f.node.children?.length){h+=`<div class="branch-grid">${f.node.children.map(n=>`<button type="button" class="branch-link" data-open-cat="${n.id}"><span>› ${safe(n.name)}</span><span class="dir-count">${counts(n.id)}件</span></button>`).join('')}</div>`;}}
+ else if(q){h+=`<div class="directory-intro"><div><h2>「${safe(view.query)}」の検索結果</h2><p>${items.length}件の対象が見つかりました。</p></div></div>`;}
+ h+=`<div class="section-separator"><div><h2>${view.cat?'このカテゴリの対象':'検索で見つかった対象'}</h2></div><button type="button" class="btn alt small" onclick="openModal('target')">＋ 対象を追加</button></div>`;}
+ h+=items.length?`<div class="item-list">${items.map(x=>`<button type="button" class="item" data-item="${safe(x.id)}"><span class="item-body"><span class="chip">${crumb(x.cat)}</span><strong class="item-name">${safe(x.name)}</strong><span class="item-sub">${safe(x.brand)}${x.desc?' ／ '+safe(x.desc):''}</span></span>${rating(x)}</button>`).join('')}</div>`:`<div class="empty">該当する対象はまだありません。<br>あなたが最初の対象を登録できます。</div>`;
+ e.innerHTML=h;e.querySelectorAll('[data-open-cat]').forEach(el=>el.addEventListener('click',()=>goCat(el.dataset.openCat)));e.querySelectorAll('[data-item]').forEach(el=>el.addEventListener('click',()=>{view.item=el.dataset.item;filter='all';render();window.scrollTo(0,0);}));
+}
+function tagName(key){return TAGS.find(x=>x[0]===key)?.[1]||'';}
+function validPhoto(url){return typeof url==='string'&&/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(url);}
+function renderDetail(e){const x=db.items.find(y=>y.id===view.item);if(!x){view.item=null;render();return;}
+ const posts=x.reviews.slice().reverse().filter(r=>filter==='all'||(filter==='photo'?(Array.isArray(r.photos)&&r.photos.some(validPhoto)):(Array.isArray(r.tags)&&r.tags.includes(filter))));
+ e.innerHTML=`<button class="back" id="back">← 一覧に戻る</button><div class="panel detail"><span class="chip">${crumb(x.cat)}</span><h2>${safe(x.name)}</h2><div class="sub">${safe(x.brand)} ｜ ${safe(x.desc)}</div><div style="margin:15px 0">${rating(x)}</div><button class="btn" id="newreview">＋ この対象にインプレを書く</button><div class="section"><h3 class="section-title">みんなのインプレ（${x.reviews.length}）</h3><div class="filter-row" role="group" aria-label="インプレを絞り込む">${FILTERS.map(([key,label])=>`<button type="button" class="filter-btn ${filter===key?'active':''}" data-filter="${key}" aria-pressed="${filter===key}">${label}</button>`).join('')}</div>${posts.length?posts.map(r=>{const ts=(Array.isArray(r.tags)?r.tags:[]).map(tagName).filter(Boolean);const pics=(Array.isArray(r.photos)?r.photos:[]).filter(validPhoto);return `<article class="review"><div class="stars">${Number(r.score)>=1&&Number(r.score)<=5?'★'.repeat(Number(r.score))+'☆'.repeat(5-Number(r.score)):'<span class="score-optional">評価なし</span>'}</div><h4>${safe(r.title)} ${r.sample?'<span class="chip">デモ投稿</span>':''}</h4><div class="meta">${safe(r.nickname)} ・ ${safe(r.date)}</div>${ts.length?`<div class="review-tags">${ts.map(t=>`<span class="review-tag">${t}</span>`).join('')}</div>`:''}<p>${safe(r.body)}</p>${pics.length?`<div class="review-photos">${pics.map((url,i)=>`<a href="${url}" target="_blank" rel="noopener" aria-label="写真${i+1}を拡大"><img src="${url}" alt="${safe(r.title)} の写真 ${i+1}" loading="lazy"></a>`).join('')}</div>`:''}<div class="foot"><span class="footnote">${r.sample?'架空のサンプル投稿':'このブラウザに保存された投稿'}</span><button class="report" data-report="${safe(r.id)}">問題を報告</button></div></article>`;}).join(''):`<div class="empty-posts">${x.reviews.length?'この条件に合う投稿はありません。':'まだインプレがありません。第一号を書いてみよう！'}</div>`}</div></div>`;
+ e.querySelector('#back').onclick=()=>{view.item=null;filter='all';render();};e.querySelector('#newreview').onclick=()=>openModal('review');e.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;renderDetail(e);});e.querySelectorAll('[data-report]').forEach(b=>b.onclick=()=>{if(confirm('この投稿を管理者への確認対象として記録しますか？\n（試作版ではブラウザ内にのみ記録されます）')){db.reports.push({reviewId:b.dataset.report,itemId:x.id,date:new Date().toISOString()});if(save())toast('報告を記録しました（試作版）');}});
+}
+function goCat(id){view={cat:id||null,item:null,query:''};filter='all';document.getElementById('q').value='';render();window.scrollTo({top:0,behavior:'smooth'});}
+function searchNow(){view.cat=null;view.item=null;view.query=document.getElementById('q').value;render();window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')searchNow();});
+function options(){const build=(nodes,depth=0)=>nodes.map(n=>`<option value="${safe(n.id)}">${'　'.repeat(depth)}${safe(n.name)}</option>`+(n.children?build(n.children,depth+1):'')).join('');return build(TREE);}
+function targetChoices(id){return db.items.map(x=>`<option value="${safe(x.id)}" ${x.id===id?'selected':''}>${safe(x.name)} ／ ${crumb(x.cat)}</option>`).join('');}
+function openModal(type,preselect){selectedPhotos=[];const root=document.getElementById('modals');
+ const chosen=preselect||view.item||db.items[0]?.id||'';
+ let h=`<div class="modalwrap"><div class="modal ${type==='review'?'large':''}" role="dialog" aria-modal="true" aria-label="${type==='target'?'対象の新規登録':'インプレを投稿する'}"><div class="modalheader"><h2>${type==='target'?'対象を新しく登録':'インプレを投稿する'}</h2><button type="button" class="x" id="close" aria-label="閉じる">×</button></div>`;
+ if(type==='target'){h+=`<p class="helper">書きたい対象がまだなければ、ここで一度だけ登録できます。</p><form id="entry"><label class="form-label" for="category">カテゴリ *</label><select class="field" name="cat" id="category" required>${options()}</select><label class="form-label" for="targetname">製品・対象名 *</label><input class="field" id="targetname" name="name" required maxlength="90" placeholder="例：ADVANCE 90Aオルタネーター"><label class="form-label" for="brand">メーカー・ブランド</label><input class="field" id="brand" name="brand" maxlength="60" placeholder="例：ADVANCE"><label class="form-label" for="desc">補足説明</label><input class="field" id="desc" name="desc" maxlength="180" placeholder="型番や特徴など"><div class="notice">すでにある対象は重複登録しない設計を目指します。この試作版では同カテゴリの同名登録を防ぎます。</div><div class="form-actions"><button class="btn" type="submit">対象を登録して投稿へ</button></div></form>`;}
+ else{h+=`<p class="helper">ブログ？パーツレビュー？整備手帳？ 分けなくて大丈夫。ひとつの記事に、体験も作業も写真もまとめて書けます。</p><form id="entry"><label class="form-label" for="target">① 何について書く？ *</label><div class="form-inline"><select class="field" id="target" name="target" required>${targetChoices(chosen)}</select><button type="button" class="btn alt small" id="newtarget">＋ 対象がない</button></div><label class="form-label" for="title">② タイトル *</label><input class="field" id="title" name="title" required maxlength="100" placeholder="例：90Aオルタ交換！ 配線も一緒に見直した"><label class="form-label" for="body">③ あなたの体験を書く *</label><textarea class="field" id="body" name="body" required minlength="10" maxlength="4000" placeholder="何を使った？ どうだった？ どんな作業をした？ 自由に書いてOK！"></textarea><div class="form-card"><div class="form-section-label">ここからは全部任意です</div><p class="helper">目印を付けると、読む人が絞り込みやすくなります。複数選択OK。迷ったら選ばなくても大丈夫。</p><div class="pill-row">${TAGS.map(([key,label])=>`<label class="pill-check"><input type="checkbox" name="tag" value="${key}">${label}</label>`).join('')}</div><label class="form-label" for="score">評価を付ける（任意）</label><select class="field" id="score" name="score"><option value="">付けない（作業記録など）</option><option value="5">★★★★★（5）</option><option value="4">★★★★☆（4）</option><option value="3">★★★☆☆（3）</option><option value="2">★★☆☆☆（2）</option><option value="1">★☆☆☆☆（1）</option></select><label class="form-label" for="photos">スマホ写真を添える（最大3枚）</label><label class="uploader">＋ 写真を選ぶ／追加する<input type="file" id="photos" accept="image/*" multiple></label><div class="photo-previews" id="photo-previews" aria-live="polite"></div><p class="helper">写真は縮小してこのブラウザにだけ保存します。別の端末には共有されません。</p></div><label class="form-label" for="nickname">投稿名 *</label><input class="field" id="nickname" name="nickname" required maxlength="30" placeholder="ニックネーム"><div class="notice">試作版：投稿はこのブラウザ内だけに保存されます。個人情報や位置情報が写り込んでいないか、写真を確認してください。</div><div class="form-actions"><button class="btn" id="submit-post" type="submit">この内容で投稿する</button></div></form>`;}
+ h+='</div></div>';root.innerHTML=h;root.classList.remove('hidden');root.querySelector('#close').onclick=closeModal;root.querySelector('.modalwrap').addEventListener('click',e=>{if(e.target.classList.contains('modalwrap'))closeModal();});
+ if(type==='review'){
+ root.querySelector('#newtarget').onclick=()=>{if(confirm('新しい対象を登録しますか？\n入力中の投稿内容は一旦消えます。'))openModal('target');};
+ root.querySelector('#photos').addEventListener('change',async e=>{const input=e.target;const newFiles=[...input.files];input.value='';for(const file of newFiles){if(selectedPhotos.length>=3){alert('写真は最大3枚です。');break;}if(!file.type.startsWith('image/')){alert('画像ファイルを選んでください。');continue;}if(file.size>12*1024*1024){alert('12MB以下の写真を選んでください。');continue;}try{const uri=await compressPhoto(file);if(!root.querySelector('#photo-previews'))return;selectedPhotos.push(uri);drawPhotos();}catch(error){alert('写真を読み込めませんでした。別の画像で試してください。');}}});
+ }
+ root.querySelector('#entry').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+ if(type==='target'){const name=String(f.get('name')).trim(),cat=String(f.get('cat'));if(!name||!findNode(cat))return;if(db.items.some(x=>x.cat===cat&&x.name.toLocaleLowerCase()===name.toLocaleLowerCase())){alert('同じカテゴリに同名の対象があります。');return;}const id='u'+Date.now()+Math.random().toString(36).slice(2,5);db.items.push({id,cat,name,brand:String(f.get('brand')).trim(),desc:String(f.get('desc')).trim(),reviews:[]});if(!save()){db.items.pop();return;}view={cat:null,item:id,query:''};document.getElementById('q').value='';closeModal();render();openModal('review',id);toast('対象を登録しました。続けて投稿できます！');}
+ else{const item=db.items.find(x=>x.id===f.get('target'));if(!item)return;const obj={id:'r'+Date.now()+Math.random().toString(36).slice(2,5),nickname:String(f.get('nickname')).trim(),score:f.get('score')?Number(f.get('score')):null,title:String(f.get('title')).trim(),body:String(f.get('body')).trim(),tags:f.getAll('tag').filter(t=>TAGS.some(([key])=>key===t)),photos:selectedPhotos.slice(0,3),date:new Date().toLocaleDateString('ja-JP')};item.reviews.push(obj);if(!save()){item.reviews.pop();return;}view={cat:null,item:item.id,query:''};filter='all';document.getElementById('q').value='';closeModal();render();window.scrollTo({top:0,behavior:'smooth'});toast('投稿できました！このブラウザだけに保存されました。');}
+ };
+}
+function compressPhoto(file){return new Promise((resolve,reject)=>{const url=URL.createObjectURL(file);const img=new Image();img.onload=()=>{try{const max=1100;const ratio=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));const cvs=document.createElement('canvas');cvs.width=Math.max(1,Math.round(img.naturalWidth*ratio));cvs.height=Math.max(1,Math.round(img.naturalHeight*ratio));const ctx=cvs.getContext('2d');ctx.drawImage(img,0,0,cvs.width,cvs.height);const data=cvs.toDataURL('image/jpeg',.70);resolve(data);}catch(e){reject(e);}finally{URL.revokeObjectURL(url);}};img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('image load failure'));};img.src=url;});}
+function drawPhotos(){const e=document.getElementById('photo-previews');if(!e)return;e.innerHTML=selectedPhotos.map((url,i)=>`<div class="photo-thumb"><img src="${url}" alt="添付写真 ${i+1}"><button type="button" data-photo="${i}" aria-label="写真${i+1}を削除">×</button></div>`).join('');e.querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>{selectedPhotos.splice(Number(b.dataset.photo),1);drawPhotos();});}
+function closeModal(){document.getElementById('modals').classList.add('hidden');document.getElementById('modals').innerHTML='';selectedPhotos=[];}
+let toastTimer;
+function toast(t){const n=document.getElementById('toast');n.textContent=t;n.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.classList.add('hidden'),3000);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('modals').classList.contains('hidden'))closeModal();});
+render();
+
+</script></body></html>
