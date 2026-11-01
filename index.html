@@ -80,11 +80,46 @@ footer{padding:22px;text-align:center;border-top:1px solid var(--line);color:#7c
 .photo-lightbox{position:fixed;inset:0;z-index:50;background:rgba(8,19,34,.92);display:flex;align-items:center;justify-content:center;padding:30px 15px}
 .photo-lightbox img{max-width:96vw;max-height:88vh;object-fit:contain}
 .photo-lightbox button{position:absolute;top:10px;right:14px;border:0;border-radius:6px;padding:5px 13px;background:#fff;color:#172a40;font-size:28px;cursor:pointer}
+
+/* Ver.0.4.4: category tree readability and finger-friendly click targets.
+   Expand the category hierarchy only, not the entire site UI. */
+.layout{grid-template-columns:minmax(0,1fr) 250px}
+.directory-grid{gap:16px}
+.directory-group{padding:0 18px 16px;min-height:unset}
+.dir-title{padding:12px 0 10px;align-items:center}
+.dir-heading{font-size:24px;line-height:1.45;min-height:44px;display:inline-flex;align-items:center;max-width:100%;overflow-wrap:anywhere}
+.dir-count{font-size:15px}
+.dir-list{margin:8px 0 0;padding-left:18px}
+.dir-list li{margin:3px 0}
+.dir-link{font-size:19.5px;line-height:1.4;min-height:44px;padding:7px 4px;display:inline-flex;align-items:center;max-width:100%;text-wrap:wrap;text-align:left}
+.sublinks{gap:4px 8px;padding:2px 0 5px}
+.sub-link{font-size:18px;line-height:1.4;min-height:44px;padding:7px 5px;display:inline-flex;align-items:center;text-align:left}
+.side h2{font-size:18px}
+.category{font-size:19px;line-height:1.45;min-height:48px;padding:10px 9px}
+.category .count{font-size:14px}
+.branch-grid{gap:12px}
+.branch-link{font-size:19px;line-height:1.4;min-height:52px;padding:12px 16px;align-items:center}
+.breadcrumb{font-size:17px}
+.breadcrumb button{font-size:17px;min-height:44px;padding:7px 0}
+@media(max-width:900px) and (min-width:651px){
+ .layout{grid-template-columns:minmax(0,1fr) 230px}
+}
+@media(max-width:650px){
+ .directory-grid{gap:12px}
+ .directory-group{padding:0 16px 14px}
+ .dir-heading{font-size:24px}
+ .dir-link{font-size:19.5px}
+ .sub-link{font-size:18px}
+ .branch-link{font-size:19px}
+ .side{margin-top:25px}
+ .layout{display:block}
+ .dir-count{font-size:14px}
+}
 </style></head><body>
-<header class="top"><div class="top-inner"><div class="logo"><span class="logo-first">なんでも</span><span class="logo-star">☆</span><b>インプレッション</b><span class="tag">試作版 Ver.0.4.3</span></div><div class="header-actions"><button class="btn" type="button" onclick="openModal('review')">＋ 投稿する</button></div></div></header>
+<header class="top"><div class="top-inner"><div class="logo"><span class="logo-first">なんでも</span><span class="logo-star">☆</span><b>インプレッション</b><span class="tag">試作版 Ver.0.4.4</span></div><div class="header-actions"><button class="btn" type="button" onclick="openModal('review')">＋ 投稿する</button></div></div></header>
 <section class="hero"><div class="hero-inner"><div class="eyebrow">みんなの使用感・体験談が集まるレビュー投稿サイト</div><h1>実際に使った人の感想を、探す・読む・書く。</h1><p>クルマ、バイク、パソコン、自転車、日用品やサービスまで。気になるものの「本当の使い心地」を共有する。</p><div class="join-copy"><p class="join-head">あなたの「使ってみた」が、誰かの「知りたかった」になる。</p><p class="join-sub">あなたの体験が、誰かの役に立つ。みんなの声で育つサイトです。</p></div><div class="searchbar"><input id="q" type="search" placeholder="例：ラパンSS、RTX 2080 Ti、エアコン" aria-label="インプレを検索"><button class="btn" type="button" onclick="searchNow()">インプレを探す</button></div><div class="howline"><span><b>1</b> カテゴリか名前で探す</span><span><b>2</b> 使った人の感想を読む</span><span><b>3</b> 自分の体験を投稿する</span></div></div></section>
 <main class="layout"><div class="content" id="app"></div><aside class="panel side"><h2>カテゴリ一覧</h2><nav id="sidecats"></nav><div class="side-note"><b>試作版について</b><div>これはデモサイトです。投稿や写真はこのブラウザ内にのみ保存され、ほかの人には共有されません。</div></div></aside></main>
-<footer>なんでも☆インプレッション（仮）｜Ver.0.4.3 ／ デモ投稿は架空の例です ／ サーバーには送信されません</footer>
+<footer>なんでも☆インプレッション（仮）｜Ver.0.4.4 ／ デモ投稿は架空の例です ／ サーバーには送信されません</footer>
 <div id="modals" class="hidden"></div><div id="toast" class="toast hidden" role="status"></div>
 <script>
 
